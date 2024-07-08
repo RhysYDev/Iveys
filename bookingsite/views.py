@@ -20,3 +20,8 @@ class NavigationView(generic.ListView):
     def get_queryset(self):
         return []
     
+class EntryView(generic.ListView):
+    template_name = "bookingsite/entry.html"
+
+    def get_queryset(self):
+        return []
