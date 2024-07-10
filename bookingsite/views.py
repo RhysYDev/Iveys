@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.views import LoginView
 from . import views
+from django.contrib import messages
 
 class NavigationView(generic.ListView):
     template_name = "bookingsite/index.html"
@@ -11,6 +12,12 @@ class NavigationView(generic.ListView):
     
 class EntryView(generic.ListView):
     template_name = "bookingsite/entry.html"
+
+    def get_queryset(self):
+        return []
+
+class BookingView(generic.ListView):
+    template_name = "bookingsite/booking.html"
 
     def get_queryset(self):
         return []

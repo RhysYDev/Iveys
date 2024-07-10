@@ -35,6 +35,17 @@ nav ul li a {
     text-decoration: none;
 }
 
+.btn {
+    color: #000;
+    border-color: #000;
+}
+
+.btn-outline-secondary {
+    color: #000;
+    border-color: #000;
+}
+
+
 .hero {
     background: #ddd url('') no-repeat center center;
     background-size: cover;
