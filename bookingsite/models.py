@@ -17,10 +17,10 @@ class Resource(models.Model):
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
-    booking_date = models.DateTimeField()
+    deadline_date = models.DateTimeField()
     status = models.CharField(max_length=20, choices=[
         ('confirmed', 'Confirmed'),
         ('pending', 'Pending'),
         ('cancelled', 'Cancelled')
     ])
-    payment_details = models.TextField()
+    commission_details = models.TextField()
