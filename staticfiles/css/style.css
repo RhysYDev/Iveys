@@ -36,7 +36,7 @@ nav ul li a {
 }
 
 .hero {
-    background: #ddd url('/assets/images/WhatsApp\ Image\ 2024-07-01\ at\ 13.24.39_37aef43e.jpg') no-repeat center center;
+    background: #ddd url('') no-repeat center center;
     background-size: cover;
     height: 600px;
     display: flex;
