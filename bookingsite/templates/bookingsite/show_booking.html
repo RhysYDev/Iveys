@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Booking Details{% endblock %}
+
+{% block content %}
+<h2>Booking Details</h2>
+<p><strong>Details:</strong> {{ Booking.commission_details }}</p>
+<p><strong>Deadline Date:</strong> {{ Booking.deadline_date }}</p>
+<p><strong>Resource:</strong> {{ Booking.resource }}</p>
+<p><strong>Status:</strong> {{ Booking.status }}</p>
+
+<a href="{% url 'bookingsite:edit_booking' booking.id %}">Edit</a> | 
+<a href="{% url 'bookingsite:delete_booking' booking.id %}">Delete</a>
+<a href="{% url 'bookingsite:show_all_booking' %}">Back to Bookings</a>
+{% endblock %}
