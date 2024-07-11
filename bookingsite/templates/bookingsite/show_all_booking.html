@@ -5,14 +5,14 @@
 {% block content %}
 <h2>All Bookings</h2>
 <ul>
-    {% for booking in bookingsite %}
+    {% for booking in bookings %}
     <li>
-        <a href="{% url 'bookingsite:show_booking' booking.id %}">{{ appointment.datetime }} - {{ appointment.cut.name }}</a>
+        <a href="{% url 'show_booking' booking.id %}">{{ booking.date_deadline }} - {{ booking.commission_details }}</a>
         ({{ booking.user.username }} has requested {{ booking.resource }})
     </li>
     {% empty %}
     <li>No bookings available.</li>
     {% endfor %}
 </ul>
-<a href="{% url 'bookingsite:create_booking' %}">Create New Booking</a>
+<a href="{% url 'create_booking' %}">Create New Booking</a>
 {% endblock %}

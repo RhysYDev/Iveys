@@ -4,12 +4,12 @@
 
 {% block content %}
 <h2>Booking Details</h2>
-<p><strong>Details:</strong> {{ Booking.commission_details }}</p>
-<p><strong>Deadline Date:</strong> {{ Booking.deadline_date }}</p>
-<p><strong>Resource:</strong> {{ Booking.resource }}</p>
-<p><strong>Status:</strong> {{ Booking.status }}</p>
+<p><strong>Details:</strong> {{ booking.commission_details }}</p>
+<p><strong>Deadline Date:</strong> {{ booking.deadline_date }}</p>
+<p><strong>Resource:</strong> {{ booking.resource }}</p>
+<p><strong>Status:</strong> {{ booking.status }}</p>
 
-<a href="{% url 'bookingsite:edit_booking' booking.id %}">Edit</a> | 
-<a href="{% url 'bookingsite:delete_booking' booking.id %}">Delete</a>
-<a href="{% url 'bookingsite:show_all_booking' %}">Back to Bookings</a>
+<a href="{% url 'edit_booking' booking.id %}">Edit</a> | 
+<a href="{% url 'delete_booking' booking.id %}">Delete</a>
+<a href="{% url 'show_all_booking' %}">Back to Bookings</a>
 {% endblock %}

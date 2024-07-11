@@ -18,8 +18,7 @@ class ResourceAdmin(admin.ModelAdmin):
 # Register the Booking model
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('user', 'resource', 'booking_date', 'status')
+    list_display = ('user', 'resource', 'status')
     search_fields = ('user__username', 'resource__name', 'status')
-    list_filter = ('status', 'booking_date')
 
 # Models registered

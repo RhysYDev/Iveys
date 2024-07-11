@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% block title %}Create Booking{% endblock %}
 
 {% block content %}
-
-    <div class="container">
-        <h1>Welcome to the booking Page</h1>
-        <p>This is the home booking of your site.</p>
-    </div>
-    
+<h2>Create Booking</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'show_all_booking' %}">Back to your current Bookings</a>
 {% endblock %}

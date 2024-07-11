@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.views import LoginView
 from . import views
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Booking, Resource
+from .forms import BookingForm
 
 
 class NavigationView(generic.ListView):
@@ -26,12 +27,12 @@ class BookingView(generic.ListView):
         return []
 
 @login_required
-def create_commission(request):
+def create_booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.client = request.user.profile
+            booking.client = request.user
             booking.save()
             return redirect('show_booking', booking_id=booking.id)
     else:
@@ -40,7 +41,7 @@ def create_commission(request):
 
 @login_required
 def edit_booking(request, booking_id):
-    booking = BookingForm.objects.get(pk=booking_id)
+    booking = Booking.objects.get(pk=booking_id)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
@@ -65,7 +66,7 @@ def show_booking(request, booking_id):
 
 @login_required
 def show_all_booking(request):
-    bookings = Booking.objects.filter(client=request.user.profile)
+    bookings = Booking.objects.filter(user=request.user)
     return render(request, 'bookingsite/show_all_booking.html', {'bookings': bookings})
 
 @login_required
