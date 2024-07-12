@@ -8,7 +8,7 @@
     {% for booking in bookings %}
     <li>
         <a href="{% url 'show_booking' booking.id %}">{{ booking.date_deadline }} - {{ booking.commission_details }}</a>
-        ({{ booking.user.username }} has requested {{ booking.resource }})
+        ({{ booking.user.username }} has requested {{ booking.resource.name }})
     </li>
     {% empty %}
     <li>No bookings available.</li>

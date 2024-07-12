@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.views import LoginView
 from . import views
+from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Booking, Resource
@@ -32,8 +33,9 @@ def create_booking(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.client = request.user
+            booking.user = request.user
             booking.save()
+            messages.add_message(request, messages.SUCCESS, "Booking successfully sent!")
             return redirect('show_booking', booking_id=booking.id)
     else:
         form = BookingForm()
@@ -46,6 +48,7 @@ def edit_booking(request, booking_id):
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "Booking successfully edited!")
             return redirect('show_booking', booking_id=booking.id)
     else:
         form = BookingForm(instance=booking)
@@ -56,6 +59,7 @@ def delete_booking(request, booking_id):
     booking = Booking.objects.get(pk=booking_id)
     if request.method == 'POST':
         booking.delete()
+        messages.add_message(request, messages.SUCCESS, "Booking successfully deleted!")
         return redirect('show_all_booking')
     return render(request, 'bookingsite/delete_booking.html', {'booking': booking})
 

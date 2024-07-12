@@ -1,10 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
-
-class User(User):
-    phone_number = models.CharField(max_length=15)
+from django.utils import timezone
 
 
 class Resource(models.Model):
@@ -19,11 +16,16 @@ class Resource(models.Model):
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    email = models.EmailField(null=True, blank=False)
+    phone_number = models.CharField(null=True, max_length=15)
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
-    deadline_date = models.DateTimeField()
+    deadline_date = models.DateField(default=timezone.now)
     status = models.CharField(max_length=20, choices=[
         ('confirmed', 'Confirmed'),
         ('pending', 'Pending'),
         ('cancelled', 'Cancelled')
     ])
     commission_details = models.TextField()
+
+    def __str__(self):
+        return f"{self.commission_details} ({self.deadline_date})"

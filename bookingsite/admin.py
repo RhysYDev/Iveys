@@ -2,11 +2,6 @@ from django.contrib import admin
 from .models import User, Resource, Booking
 from django_summernote.admin import SummernoteModelAdmin
 
-# Register the User model
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff')
-    search_fields = ('username', 'email', 'first_name', 'last_name')
 
 # Register the Resource model
 @admin.register(Resource)

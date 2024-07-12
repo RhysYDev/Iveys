@@ -71,9 +71,10 @@ footer {
     bottom: 0;
 }
 
-.img-container {
-    max-width: 100vw;
-    min-width: 100vw;
-    max-height: 1000px;
+.navimage {
+    width: 100vw;
+    max-height: 300px;
+    left: 0;
+    position: relative;
 
 }
