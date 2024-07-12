@@ -12,7 +12,5 @@ class BookingForm(forms.ModelForm):
             'commission_details': forms.Textarea(attrs={
                 'cols': 20,
                 'rows': 5,
-                'class': 'form-control',
-                'placeholder': 'Enter details here...'
            }),
         }
