@@ -1,13 +1,50 @@
 {% extends "base.html" %}
 
-{% block title %}Create Booking{% endblock %}
-
 {% block content %}
-<h2>Create Booking</h2>
-<form method="post">
+<h2 style="padding-left: 25%;">Create Booking</h2>
+<hr class="custom-hr">
+<form method="post" style="margin-bottom: 100px;">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+
+    <div class="form-field" style="padding-left: 25%;">
+        <label for="{{ form.resource.id_for_label }}">Commission type:</label>
+        {{ form.resource }}
+    </div>
+    <hr class="custom-hr">
+
+    <div class="form-field" style="padding-left: 25%;">
+        <label for="{{ form.deadline_date.id_for_label }}">Deadline Date:</label>
+        {{ form.deadline_date }}
+    </div>
+    <hr class="custom-hr">
+
+    <div class="form-field" style="padding-left: 25%;">
+        <label for="{{ form.commission_details.id_for_label }}">Commission Details:</label>
+        <br>
+        {{ form.commission_details }}
+    </div>
+    <hr class="custom-hr">
+
+    <div class="form-field" style="padding-left: 25%;">
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+    </div>
+    <hr class="custom-hr">
+
+    <div class="form-field" style="padding-left: 25%;">
+        <label for="{{ form.phone_number.id_for_label }}">Phone Number:</label>
+        {{ form.phone_number }}
+    </div>
+    <hr class="custom-hr">
+    <div style="padding-left: 25%;">
+        <button type="submit" style="justify-self: center;">Save</button>
+        <a style="padding-left: 25%;" href="{% url 'show_all_booking' %}">Back to your current Bookings</a>
+    </div>
 </form>
-<a href="{% url 'show_all_booking' %}">Back to your current Bookings</a>
+
+<div class="row">
+    <div class="col-12">
+        <h5>IVEYS Aims to get back to you within 2 working days</h5>
+    </div>
+</div>
 {% endblock %}

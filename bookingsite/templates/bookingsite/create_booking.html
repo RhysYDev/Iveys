@@ -4,10 +4,15 @@
 
 {% block content %}
 <h2>Create Booking</h2>
-<form method="post" style="margin-bottom: 72px;">
+<form method="post" class="forms">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>
 </form>
 <a href="{% url 'show_all_booking' %}">Back to Commissions</a>
+
+<div class="row">
+    <div class="col-12"> <h5>IVEYS Aims to get back to you within 2 working days</h5></div>
+</div>
+
 {% endblock %}

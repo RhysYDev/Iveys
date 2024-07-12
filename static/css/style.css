@@ -41,7 +41,7 @@ nav ul li {
 nav ul li a {
     color: #585C5F;
     text-decoration: none;
-    
+
 }
 
 .btn {
@@ -88,7 +88,7 @@ footer {
 
 }
 
-.img-containerino{
+.img-containerino {
     position: relative;
 }
 
@@ -108,4 +108,23 @@ footer {
 .booknow {
     border-color: #585C5F;
     border: 1px;
+
+}
+
+.formfield {
+    display: grid;
+    justify-content: center;
+}
+
+.custom-hr {
+    width: 50%;
+    /* Adjust the width as needed */
+    height: 2px;
+    /* Thickness of the <hr> */
+    background-color: black;
+    /* Color of the <hr> */
+    border: none;
+    /* Remove default border */
+    margin: 20px auto;
+    /* Center and add spacing */
 }
