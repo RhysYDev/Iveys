@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Create Booking</h2>
-<form method="post">
+<form method="post" style="margin-bottom: 72px;">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>
