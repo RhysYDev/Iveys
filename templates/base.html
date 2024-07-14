@@ -47,18 +47,17 @@
                             <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="{% url 'nav' %}" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Artwork
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'inkwork' %}">InkWork</a></li>
-                                <li><a class="dropdown-item" href="{% url 'paintwork' %}">Paintwork</a></li>
-                                <li><a class="dropdown-item" href="{% url 'digiwork' %}">Digiwork</a></li>
+                            <!-- had to override styles inline as css wouldnt work  -->
+                            <ul class="dropdown-menu text-center" style="--bs-dropdown-bg: #7E6F64; --bs-dropdown-link-hover-bg: #B89C87; --bs-dropdown-border-color: #7E6F64;">
+                                <li><a class="dropdown-item" href="{% url 'digiwork' %}">DIGIWORK</a></li>
+                                <li><a class="dropdown-item" href="{% url 'inkwork' %}">INKWORK</a></li>
+                                <li><a class="dropdown-item" href="{% url 'paintwork' %}">PAINTWORK</a></li>
+                                <li><a class="dropdown-item" href="{% url 'lensework' %}">LENSEWORK</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lensework' %}">LenseWork</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">

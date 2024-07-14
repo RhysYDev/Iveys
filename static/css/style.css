@@ -133,6 +133,9 @@ footer {
     background-color: #7E6F64;
 }
 
+nav .nav-item .dropdown-menu {
+    background-color: #7E6F64;
+}
 
 
 /* return to top button used on exhibit pages */
