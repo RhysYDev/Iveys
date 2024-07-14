@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<hr class="custom-hr">
+<h1 class="text-center">Lensework Exhibit</h1>
+<hr class="custom-hr">
+<div class="text-center" style="max-width: 100%;">
+    <img src="{% static 'images/model_guy_1.JPG' %}" class="img-fluid" alt="model guy 1">
+    <img src="{% static 'images/model_guy_2.JPG' %}" class="img-fluid" alt="model guy 2">
+    <img src="{% static 'images/model_guy_3.JPG' %}" class="img-fluid" alt="model guy 3">
+</div>
+{% endblock %}

@@ -12,4 +12,8 @@ urlpatterns = [
     path('<int:booking_id>/', views.show_booking, name='show_booking'),
     path('show_all/', views.show_all_booking, name='show_all_booking'),
     path('booking-success/<int:booking_id>/', views.booking_success, name='booking-success'),
+    path('inkwork/', views.InkworkView.as_view(), name='inkwork'),
+    path('digiwork/', views.DigiworkView.as_view(), name='digiwork'),
+    path('paintwork/', views.PaintworkView.as_view(), name='paintwork'),
+    path('lensework/', views.LenseworkView.as_view(), name='lensework'),
 ]

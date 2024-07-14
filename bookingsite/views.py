@@ -27,6 +27,30 @@ class BookingView(generic.ListView):
     def get_queryset(self):
         return []
 
+class InkworkView(generic.ListView):
+    template_name = "bookingsite/inkwork.html"
+
+    def get_queryset(self):
+        return []
+
+class PaintworkView(generic.ListView):
+    template_name = "bookingsite/paintwork.html"
+
+    def get_queryset(self):
+        return []
+
+class DigiworkView(generic.ListView):
+    template_name = "bookingsite/digiwork.html"
+
+    def get_queryset(self):
+        return []
+
+class LenseworkView(generic.ListView):
+    template_name = "bookingsite/lensework.html"
+
+    def get_queryset(self):
+        return []
+
 @login_required
 def create_booking(request):
     if request.method == 'POST':
