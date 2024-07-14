@@ -128,3 +128,7 @@ footer {
     margin: 20px auto;
     /* Center and add spacing */
 }
+
+.entry-bg {
+    background-color: #7E6F64;
+}
