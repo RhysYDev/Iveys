@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Edit Booking{% endblock %}
+{% load static %}
 
 {% block content %}
-<h2>Paintwork Gallery</h2>
+
+<hr class="custom-hr">
+<h1 class="text-center exhibit-title">PAINTWORK EXHIBIT</h1>
+<hr class="custom-hr">
+<div class="text-center" style="max-width: 100%;">
+    <img src="{% static 'images/liquid_blue.JPEG' %}" class="img-fluid" alt="liquid_blue">
+    <img src="{% static 'images/liquid_orange.JPG' %}" class="img-fluid" alt="liquid_orange">
+</div>
 
 {% endblock %}

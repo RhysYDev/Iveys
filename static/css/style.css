@@ -132,3 +132,27 @@ footer {
 .entry-bg {
     background-color: #7E6F64;
 }
+
+
+
+/* return to top button used on exhibit pages */
+
+#rttBtn {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #110C09;
+    color: #B89C87;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #rttBtn:hover {
+    background-color: #555;
+  }

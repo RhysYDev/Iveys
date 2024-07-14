@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Edit Booking{% endblock %}
+{% load static %}
 
 {% block content %}
-<h2>Digiwork Exhibit</h2>
+
+<hr class="custom-hr">
+<h1 class="text-center exhibit-title">DIGIWORK EXHIBIT</h1>
+<hr class="custom-hr">
 <div class="text-center" style="max-width: 100%;">
-    <img src="..." class="img-fluid" alt="digiwork image">
-    <img src="..." class="img-fluid" alt="digiwork image">
-    <img src="..." class="img-fluid" alt="digiwork image">
-    <img src="..." class="img-fluid" alt="digiwork image">
+    <img src="{% static 'images/IMG_3997.PNG' %}" class="img-fluid" alt="digiwork image">
+    <img src="{% static 'images/IMG_3984.JPG' %}" class="img-fluid" alt="digiwork image">
+    <img src="{% static 'images/IMG_3987.JPG' %}" class="img-fluid" alt="digiwork image">
 </div>
 {% endblock %}
